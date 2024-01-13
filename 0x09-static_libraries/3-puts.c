@@ -8,5 +8,3 @@ void _puts(char *s)
 {
 puts(s);
 }
-
-
