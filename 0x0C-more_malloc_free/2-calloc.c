@@ -34,7 +34,7 @@ if (size == 0 || nmemb == 0)
 	return (NULL);
 mem = malloc(sizeof(int) * nmemb);
 
-if (m == 0)
+if (mem == 0)
 	return (NULL);
 
 _memset(mem, 0, nmemb * sizeof(int));
