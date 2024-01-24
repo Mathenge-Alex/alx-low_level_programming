@@ -2,10 +2,10 @@
 
 
 /**
- * *malloc_checked - function allocates memory using malloc
+ * *malloc_checked - the function allocates memory
  * function exits if it fails
  * @b: int
- * Return: pointer to the initialized array or NULL
+ * Return: returns pointer to the array initialized or NULL
  */
 
 void *malloc_checked(unsigned int b)
