@@ -1,1 +1,3 @@
-# Structures type def
+# Structures type def Directory
+
+Structures type def example problems
