@@ -2,7 +2,8 @@
 #include <stdlib.h>
 
 /**
- * get_op_func - function selects the correct operation function requested by a user
+ * get_op_func - function selects the correct operation function
+ * requested by a user
  * @s: operator argument
  * Return: returns function pointer corresponding to the given operator
  */
