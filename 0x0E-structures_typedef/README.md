@@ -1,1 +1,1 @@
-Type def documentation
+# Structures type def
