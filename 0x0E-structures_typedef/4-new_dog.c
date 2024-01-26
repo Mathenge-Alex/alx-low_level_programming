@@ -2,43 +2,43 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * cur_dog - function creates new data structure for dog
+ * new_dog - function creates new data structure for dog
  * @name: dog name
  * @age: dog age
  * @owner: dog owner
  *
  * Return: Pointer to new dog
  **/
-dog_t *cur_dog(char *name, float age, char *owner)
+dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *cur_dog;
+	dog_t *new_dog;
 	int name_len, owner_len;
 
-	cur_dog = malloc(sizeof(dog_t));
-	if (cur_dog == NULL)
+	new_dog = malloc(sizeof(dog_t));
+	if (new_dog == NULL)
 		return (NULL);
 
 	name_len = _strlen(name);
-	cur_dog->name = malloc(sizeof(char) * name_len + 1);
-	if (cur_dog->name == NULL)
+	new_dog->name = malloc(sizeof(char) * name_len + 1);
+	if (new_dog->name == NULL)
 	{
-		free(cur_dog);
+		free(new_dog);
 		return (NULL);
 	}
-	cur_dog->name = _strcpy(cur_dog->name, name);
+	new_dog->name = _strcpy(new_dog->name, name);
 	owner_len = _strlen(owner);
-	cur_dog->owner = malloc(sizeof(char) * owner_len + 1);
-	if (cur_dog->owner == NULL)
+	new_dog->owner = malloc(sizeof(char) * owner_len + 1);
+	if (new_dog->owner == NULL)
 	{
-		free(cur_dog->name);
-		free(cur_dog);
+		free(new_dog->name);
+		free(new_dog);
 		return (NULL);
 	}
 
-	cur_dog->owner = _strcpy(cur_dog->owner, owner);
-	cur_dog->age = age;
+	new_dog->owner = _strcpy(new_dog->owner, owner);
+	new_dog->age = age;
 
-	return (cur_dog);
+	return (new_dog);
 }
 
 /**
