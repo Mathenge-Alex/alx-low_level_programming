@@ -31,7 +31,7 @@ int wrdcnt(char *s)
  */
 char **strtow(char *str)
 {
-	int a, b, c,m, n = 0, wc = 0;
+	int a, b, c, m, n = 0, wc = 0;
 	char **w;
 
 	if (str == NULL || *str == '\0')
@@ -61,8 +61,8 @@ char **strtow(char *str)
 				free(w);
 				return (NULL);
 			}
-			for (m = 0;m < b;m++)
-				w[wc][m] = str[a +m];
+			for (m = 0; m < b; m++)
+				w[wc][m] = str[a + m];
 			w[wc][m] = '\0';
 			wc++;
 			a += b;
