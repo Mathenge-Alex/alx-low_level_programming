@@ -4,19 +4,20 @@
  * @dest: destination pointer
  * @src: source pointer
  * Return: Returns void
-*/
+ */
 
 char *_strcat(char *dest, char *src)
 {
-    int idx = -1, counter;
-    for (counter = 0; dest[counter] != '\0'; counter++)
-        ;
+	int index = -1, counter;
 
-    do {
-        idx++;
-        dest[counter] = src[idx];
-        counter++;
-    } while (src[idx] != '\0');
+	for (counter = 0; dest[counter] != '\0'; counter++)
+		;
 
-    return (dest);
+	do {
+		index++;
+		dest[counter] = src[index];
+		counter++;
+	} while (src[index] != '\0');
+
+	return (dest);
 }
