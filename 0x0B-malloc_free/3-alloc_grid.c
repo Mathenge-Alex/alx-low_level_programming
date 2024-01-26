@@ -9,29 +9,29 @@
 
 int **alloc_grid(int width, int height)
 {
-int **tab, i, j;
-tab = malloc(sizeof(*tab) * height);
+int **sect, i, j;
+sect = malloc(sizeof(*sect) * height);
 
-if (width <= 0 || height <= 0 || tab == 0)
+if (width <= 0 || height <= 0 || sect == 0)
 	return (NULL);
 
 else
 {
 	for (i = 0; i < height; i++)
 	{
-		tab[i] = malloc(sizeof(**tab) * width);
-		if (tab[i] == 0)
+		sect[i] = malloc(sizeof(**sect) * width);
+		if (sect[i] == 0)
 		{
 			while (i--)  /*Free everything in case malloc fails*/
-				free(tab[i]);
-			free(tab);
+				free(sect[i]);
+			free(sect);
 			return (NULL);
 		}
 
 		for (j = 0; j < width; j++)
-			tab[i][j] = 0;
+			sect[i][j] = 0;
 	}
 }
 
-return (tab);
+return (sect);
 }
