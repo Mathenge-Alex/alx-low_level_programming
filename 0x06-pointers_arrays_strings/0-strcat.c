@@ -1,8 +1,8 @@
 #include "main.h"
 /**
  * *_strcat - Functions concatenates two strings
- * @dest: destination pointer
- * @src: source pointer
+ * @dest: Destination pointer
+ * @src: Source pointer
  * Return: Returns void
  */
 
