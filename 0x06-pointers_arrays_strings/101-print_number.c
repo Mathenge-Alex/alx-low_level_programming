@@ -2,7 +2,6 @@
 /**
 * print_number - Function prints numbers chars
 * @n: Integer parameter
-* Return: Returns 0
 **/
 
 void print_number(int n)
