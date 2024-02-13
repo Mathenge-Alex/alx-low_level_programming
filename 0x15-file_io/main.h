@@ -23,4 +23,4 @@ void validate_elf(unsigned char *e_ident);
 unsigned int lit_to_big_endian(unsigned int x);
 void print_entry(unsigned int e_type, unsigned char *e_ident);
 
-#endif 
+#endif
