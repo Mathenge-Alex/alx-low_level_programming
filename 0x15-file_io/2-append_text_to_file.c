@@ -18,7 +18,7 @@ int _strlen(char *s)
 * append_text_to_file - Function appends text at the file end
 * @filename: Data file
 * @text_content: info to append into the file.
-* Return: 1 on success, -1 on failure
+* Return: Returns 1 on success, -1 on failure
 */
 int append_text_to_file(const char *filename, char *text_content)
 {
