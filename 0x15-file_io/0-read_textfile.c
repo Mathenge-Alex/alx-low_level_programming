@@ -1,43 +1,53 @@
 #include "main.h"
+#include <unistd.h>
+#include <fcntl.h>
+#include <stdlib.h>
 /**
-* read_file_textfile - Function reads a file_text file and
+* read_textfile - Function reads a file_text file and
 * prints it to the POSIX standard output
 * @filename: The file
 * @letters: Number of letters
-* Return: Returns letters printed or 0 if fail.
+* Description: Function opens a file, reads up to `letters` characters
+* from it, and writes those characters to the standard output. It ensures
+* that the resources are freed and files are closed in case of any errors.
+* Return: Returns the actual number of letters it could read and print, or 0 if
+* an operation fails.
 */
-ssize_t read_file_textfile(const char *filename, size_t letters)
+ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t letters_num;
-	int file;
-	char *file_text;
+	int fd;
 
-	if (!filename)
+	ssize_t nread, nwritten;
+	char *buffer;
+
+	if (filename == NULL)
 		return (0);
-	file_text = malloc(sizeof(char) * letters + 1);
-	if (file_text == NULL)
+
+	buffer = malloc(sizeof(char) * letters);
+	if (buffer == NULL)
 		return (0);
-	file = open(filename, O_RDONLY);
-	if (file == -1)
+
+	fd = open(filename, O_RDONLY);
+	if (fd == -1)
 	{
-		free(file_text);
+		free(buffer);
 		return (0);
 	}
-	letters_num = read(file, file_text, sizeof(char) * letters);
-	if (letters_num == -1)
+
+	nread = read(fd, buffer, letters);
+	if (nread == -1)
 	{
-		free(file_text);
-		close(file);
+		close(fd);
+		free(buffer);
 		return (0);
 	}
-	letters_num = write(STDOUT_FILENO, file_text, letters_num);
-	if (letters_num == -1)
-	{
-		free(file_text);
-		close(file);
+
+	nwritten = write(STDOUT_FILENO, buffer, nread);
+	close(fd);
+	free(buffer);
+
+	if (nwritten != nread)
 		return (0);
-	}
-	free(file_text);
-	close(file);
-	return (letters_num);
+
+	return (nread);
 }
