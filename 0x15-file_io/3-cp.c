@@ -1,7 +1,8 @@
 #include "main.h"
 /**
- * main - Function copies info from file_from to file_to.
-file * @av: An array of arguments
+ * main - Function copies info from file_from to file_to file
+ * @av: An array of arguments
+ * @ac: An array of arguments
  * Return: Returns always 0.
  */
 int main(int ac, char **av)
