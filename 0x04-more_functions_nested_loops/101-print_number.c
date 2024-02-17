@@ -9,13 +9,13 @@ void print_number(int n)
 {
 	int divisor = 1;
 
-	int is_negative = 0;
+	int is_negtv = 0;
 
 	if (n < 0)
 	{
 		_putchar('-');
 		n *= -1;
-		is_negative = 1;
+		is_negtv = 1;
 	}
 
 	while (n / divisor >= 10)
@@ -25,12 +25,11 @@ void print_number(int n)
 
 	while (divisor != 0)
 	{
-		_putchar((n / divisor) + '0');
-		n %= divisor;
+		_putchar((n / divisor) % 10 + '0');
 		divisor /= 10;
 	}
 
-	if (is_negative == 0 && n == 0)
+	if (is_negtv == 0 && n == 0)
 	{
 		_putchar('0');
 	}
